@@ -117,7 +117,10 @@ router.get('', async function(req, res) {
   try {
     const search = req.query.name ? { name: req.query.name } : {};
 
+    console.log(search);
+    
     const subjects = await SubjectModel.find(search);
+    console.log(subjects);
     res.json({
       status: 'succcess',
       data: subjects,
